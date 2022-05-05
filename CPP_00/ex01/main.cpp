@@ -3,11 +3,14 @@
 #include <string>
 #include <iomanip>
 
-using namespace <std>
+using namespace std;
+
+
 
 int main(void)
 {
-    str user_input;
+    string      user_input;
+    PhoneBook   current_book;
 
     while (1)
     {
@@ -15,15 +18,14 @@ int main(void)
         cin >> user_input;
         if (strcmp(user_input, "ADD") == 0)
         {
-            add_function();
+            current_book.add();
         }
         else if (strcmp(user_input, "SEARCH") == 0)
         {
-            search_function();
+            current_book.search();
         }
         else if (strcmp(user_input, "EXIT") == 0)
         {
-            exit_function();
             return (EXIT_SUCCESS) ;
         }
         else

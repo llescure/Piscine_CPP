@@ -17,6 +17,8 @@ class Contact
         Contact( string first, string last, string name, string phone, string secret );
         ~Contact( void );
 
+        void    add(string first, string last, string name, string phone, string secret);
+
 };
 
 #endif
