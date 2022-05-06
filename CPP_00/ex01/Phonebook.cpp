@@ -34,7 +34,7 @@ void    PhoneBook::display()
     id = 0;
     for (int i = 0, i < 8, i++)
     {
-        contact[i].show_all_contact();
+        contact[i].show_all_contact(i);
     }
     while (id != (int)id && id < 1 && id > 8)
     {

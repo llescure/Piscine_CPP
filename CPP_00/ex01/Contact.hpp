@@ -8,18 +8,19 @@
 
 class Contact 
 {
+        std::string first_name;
+        std::string last_name;
+        std::string nickname;
+        std::string phone_number;
+        std::string darkest_secret;
+    
     private:
-        string first_name;
-        string last_name;
-        string nickname;
-        string phone_number;
-        string darkest_secret;
-
         Contact();
         ~Contact( void );
 
-        void show_all_contact(void);
+        void show_all_contact(const int);
         void show_particular_contact(void);
+        void show_information(std::string data, const bool display_pipe);
 };
 
 #endif

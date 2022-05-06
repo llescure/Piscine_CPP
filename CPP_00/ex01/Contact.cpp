@@ -34,9 +34,33 @@ Contact::Contact()
     return ;
 }
 
-Contact::show_all_contact(void)
+Contact::show_all_contact(const id)
 {
-    
+    std::cout << std::setw(11)
+    std::cout << id;
+    std::cout << "|";
+    show_information(this.first_name, true);
+    show_information(this.last_name, true);
+    show_information(this.nickname, false);
+}
+
+void    show_information(std::string data, const bool display_pipe)
+{
+    std::cout << std::setw(10);
+    if (data.lenght() <= 10)
+    {
+        std::cout << data;
+    }
+    else
+    {
+        data.resize(10);
+        data[9] = '.';
+        std::count << data;
+    }
+    if (display_pipe == true)
+    {
+        std::cout << "|";
+    }
 }
 
 Contact::show_particular_contact(void)
