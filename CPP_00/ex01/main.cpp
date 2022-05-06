@@ -3,10 +3,6 @@
 #include <string>
 #include <iomanip>
 
-using namespace std;
-
-
-
 int main(void)
 {
     string      user_input;
@@ -14,24 +10,24 @@ int main(void)
 
     while (1)
     {
-        cout << "Enter a command" << endl;
-        cin >> user_input;
-        if (strcmp(user_input, "ADD") == 0)
+        std::cout << "Enter a command" << std::endl;
+        std::cin >> user_input;
+        if (user_input.compare("ADD"))
         {
             current_book.add();
         }
-        else if (strcmp(user_input, "SEARCH") == 0)
+        else if (user_input.compare("SEARCH"))
         {
             current_book.search();
         }
-        else if (strcmp(user_input, "EXIT") == 0)
+        else if (user_input.compare("EXIT"))
         {
             return (EXIT_SUCCESS) ;
         }
         else
         {
-            cout << "Wrong command" << endl;
-            cout << "Must be ADD, SEARCH or EXIT" << endl;
+            std::cout << "Wrong command" << std::endl;
+            std::cout << "Must be ADD, SEARCH or EXIT" << std::endl;
         }
     }
 }

@@ -3,22 +3,23 @@
 
 #include <iostream>
 #include <string>
+#include <string>
+#include <iomanip>
 
 class Contact 
 {
-    public:
-
+    private:
         string first_name;
         string last_name;
         string nickname;
         string phone_number;
         string darkest_secret;
 
-        Contact( string first, string last, string name, string phone, string secret );
+        Contact();
         ~Contact( void );
 
-        void    add(string first, string last, string name, string phone, string secret);
-
+        void show_all_contact(void);
+        void show_particular_contact(void);
 };
 
 #endif
