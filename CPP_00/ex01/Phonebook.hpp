@@ -15,8 +15,8 @@ class PhoneBook
         PhoneBook(void);
         ~PhoneBook(void);
 
-        void    add(void);
-        void    display(void);
+        void    add(const int nb_iteration);
+        void    display(const int nb_iteration);
         void    search(const int);
 };
 

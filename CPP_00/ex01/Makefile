@@ -18,6 +18,8 @@ BLUE		:= $(shell tput -Txterm setaf 6)
 WHITE		:= $(shell tput -Txterm setaf 7)
 RESET		:= $(shell tput -Txterm sgr0)
 
+SAN = -g3 -fsanitize=address
+
 RM = rm -rf
 
 $(NAME): $(OBJS)
@@ -35,6 +37,9 @@ fclean: clean
 	@ $(RM) $(OBJS)
 	@ $(MAKE) fclean $(CXX)
 	@echo "$(RED)Deleting executables...$(RESET)"
+
+san:
+	@(c++ -o $(NAME) $(SRCS) $(CXXFLAGS) $(SAN))
 
 re: fclean all
 

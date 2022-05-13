@@ -19,9 +19,10 @@ class Contact
         Contact();
         ~Contact( void );
 
-        void show_particular_contact(void);
-        void show_information(std::string data, const bool display_pipe);
-        void show_all_contact(const int id);
+        void    create_contact(void);
+        void    show_particular_contact(void);
+        void    show_information(std::string data, const bool display_pipe);
+        void    show_all_contact(const int id);
 };
 
 #endif

@@ -14,27 +14,31 @@ int main(void)
     {
         std::cout << "Enter a command" << std::endl;
         std::cin >> user_input;
-        if (user_input.compare("ADD"))
+        std::cout << std::endl;
+        if (user_input.compare("ADD") == 0)
         {
-            current_book.add();
+            current_book.add(nb_iteration);
             nb_iteration++;
         }
-        else if (user_input.compare("SEARCH"))
+        else if (user_input.compare("SEARCH") == 0)
         {
             if (nb_iteration == 0)
             {
                 std::cout << "Can't search for a contact. Phonebook is empty" << std::endl;
             }
-            current_book.display();
+            else
+            {
+                current_book.display(nb_iteration);
+            }
         }
-        else if (user_input.compare("EXIT"))
+        else if (user_input.compare("EXIT") == 0)
         {
             return (0) ;
         }
         else
         {
             std::cout << "Wrong command" << std::endl;
-            std::cout << "Must be ADD, SEARCH or EXIT" << std::endl;
+            std::cout << "Must be ADD, SEARCH or EXIT\n" << std::endl;
         }
     }
 }

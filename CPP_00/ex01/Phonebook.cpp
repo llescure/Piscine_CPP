@@ -11,36 +11,43 @@ PhoneBook::~PhoneBook(void)
     return ;
 }
 
-void    PhoneBook::add()
+void    PhoneBook::add(const int nb_iteration)
 {
-    Contact new_contact;
-    
-    for(int i = 0; i < 7; i++)
+    if (nb_iteration > 7)
     {
-        if (this->contact[i].first_name.empty() == true)
-        {
-            this->contact[i] = new_contact;
-            return ;
-        }
+        this->contact[7].create_contact();
     }
-    this->contact[7] = new_contact;
+    else
+    {
+        this->contact[nb_iteration].create_contact();
+        return ;
+    }
     return ;
 }
 
-void    PhoneBook::display()
+void    PhoneBook::display(const int nb_iteration)
 {
     int id;
+    int i;
 
     id = 0;
-    for (int i = 0; i < 8; i++)
+    i = 0;
+    while (this->contact[i].first_name.compare(""))
     {
-        contact[i].show_all_contact(i);
+        this->contact[i].show_all_contact(i);
+        std::cout << std::endl;
+        i++;
     }
-    while (id != (int)id && id < 1 && id > 8)
+    while (id > nb_iteration || id == 0 || id != (int)id || id < 1 || id > 8)
     {
+        if (id > nb_iteration && id < 8)
+        {
+            std::cout << "Sorry but the id given is not associated with any contact" << std::endl;
+        }
         std::cout << "Enter the id of the contact you want to display" << std::endl;
         std::cout << "It must be comprised between 1 and 8" << std::endl;
         std::cin >> id;
+        std::cout << std::endl;
     }
     id = id - 1;
     search(id);
@@ -56,5 +63,6 @@ void    PhoneBook::search(const int id)
             contact[i].show_particular_contact();
         }
     }
+    std::cout << std::endl;
     return ;
 }
