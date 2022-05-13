@@ -9,5 +9,6 @@ int main(void)
     test.randomChump("Brain Eater");
     Zombie *test2 = test.newZombie("Eye Eater");
     (*test2).announce();
+    delete(test2);
     return 0;
 }
