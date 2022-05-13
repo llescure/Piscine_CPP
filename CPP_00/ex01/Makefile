@@ -5,8 +5,8 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =	./main.cpp \
-		./Phonebook.cpp \
-		./Contact.cpp \							
+		./Contact.cpp \
+		./Phonebook.cpp 
 
 BLACK		:= $(shell tput -Txterm setaf 0)
 RED			:= $(shell tput -Txterm setaf 1)

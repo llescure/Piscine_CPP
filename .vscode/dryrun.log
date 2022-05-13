@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/lealescure/dev/42/Piscine_CPP'
+make: Leaving directory `/Users/lealescure/dev/42/Piscine_CPP'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

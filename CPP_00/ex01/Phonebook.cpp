@@ -5,7 +5,7 @@ PhoneBook::PhoneBook(void)
     return ;
 }
 
-~PhoneBook::PhoneBook(void)
+PhoneBook::~PhoneBook(void)
 {
     std::cout << "Your phonebook is destroyed, you lost all your contacts" << std::endl;
     return ;
@@ -15,15 +15,15 @@ void    PhoneBook::add()
 {
     Contact new_contact;
     
-    for(int i = 0, i < 7, i++)
+    for(int i = 0; i < 7; i++)
     {
-        if (std::is_empty(this.contact[i]) == true)
+        if (this->contact[i].first_name.empty() == true)
         {
-            this.contact[i] = new_contact;
+            this->contact[i] = new_contact;
             return ;
         }
     }
-    this.contact[i] = new_contact;
+    this->contact[7] = new_contact;
     return ;
 }
 
@@ -32,7 +32,7 @@ void    PhoneBook::display()
     int id;
 
     id = 0;
-    for (int i = 0, i < 8, i++)
+    for (int i = 0; i < 8; i++)
     {
         contact[i].show_all_contact(i);
     }
@@ -42,14 +42,14 @@ void    PhoneBook::display()
         std::cout << "It must be comprised between 1 and 8" << std::endl;
         std::cin >> id;
     }
-    id = id--;
+    id = id - 1;
     search(id);
     return ;
 }
 
 void    PhoneBook::search(const int id)
 {
-    for (int i = 0, i < 8, i++)
+    for (int i = 0; i < 8; i++)
     {
         if (i == id)
         {
