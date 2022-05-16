@@ -1,4 +1,4 @@
-NAME = MyAwsomePhoneBook
+NAME = MyAwesomePhoneBook
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++

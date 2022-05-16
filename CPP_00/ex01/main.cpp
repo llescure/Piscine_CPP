@@ -13,7 +13,10 @@ int main(void)
     while (1)
     {
         std::cout << "Enter a command" << std::endl;
-        std::cin >> user_input;
+        if (!std::getline(std::cin, user_input))
+        {
+            break ;
+        }
         std::cout << std::endl;
         if (user_input.compare("ADD") == 0)
         {
@@ -25,6 +28,7 @@ int main(void)
             if (nb_iteration == 0)
             {
                 std::cout << "Can't search for a contact. Phonebook is empty" << std::endl;
+                std::cout << std::endl;
             }
             else
             {
@@ -35,8 +39,9 @@ int main(void)
         {
             return (0) ;
         }
-        else
+        else if (user_input.compare("") != 0)
         {
+            std::cout << user_input << std::endl;
             std::cout << "Wrong command" << std::endl;
             std::cout << "Must be ADD, SEARCH or EXIT\n" << std::endl;
         }

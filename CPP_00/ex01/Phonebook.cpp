@@ -15,20 +15,25 @@ void    PhoneBook::add(const int nb_iteration)
 {
     if (nb_iteration > 7)
     {
+        this->contact[7].first_name = "";
+        this->contact[7].last_name = "";
+        this->contact[7].nickname = "";
+        this->contact[7].phone_number = "";
+        this->contact[7].darkest_secret = "";
         this->contact[7].create_contact();
     }
     else
     {
         this->contact[nb_iteration].create_contact();
-        return ;
     }
     return ;
 }
 
 void    PhoneBook::display(const int nb_iteration)
 {
-    int id;
-    int i;
+    int         id;
+    std::string getid;
+    int         i;
 
     id = 0;
     i = 0;
@@ -38,6 +43,7 @@ void    PhoneBook::display(const int nb_iteration)
         std::cout << std::endl;
         i++;
     }
+    std::cout << std::endl;
     while (id > nb_iteration || id == 0 || id != (int)id || id < 1 || id > 8)
     {
         if (id > nb_iteration && id < 8)
@@ -46,7 +52,11 @@ void    PhoneBook::display(const int nb_iteration)
         }
         std::cout << "Enter the id of the contact you want to display" << std::endl;
         std::cout << "It must be comprised between 1 and 8" << std::endl;
-        std::cin >> id;
+        if (!std::getline(std::cin, getid))
+        {
+            break ;
+        }
+        std::istringstream(getid) >> id;
         std::cout << std::endl;
     }
     id = id - 1;
