@@ -29,11 +29,6 @@ clean:
 	@ $(RM) $(OBJS)
 	@echo "$(RED)Deleting objects...$(RESET)"
 
-fclean: clean
-	@ $(RM) $(OBJS)
-	@ $(MAKE) fclean $(CXX)
-	@echo "$(RED)Deleting executables...$(RESET)"
-
-re: fclean all
+re: clean all
 
 .PHONY: all clean fclean re

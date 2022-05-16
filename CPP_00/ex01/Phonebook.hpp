@@ -18,6 +18,8 @@ class PhoneBook
 
         void    add(const int nb_iteration);
         void    display(const int nb_iteration);
+
+    private:
         void    search(const int);
 };
 

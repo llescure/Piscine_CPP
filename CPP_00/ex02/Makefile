@@ -4,7 +4,8 @@ OBJS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./Account.cpp								
+SRCS =	./Account.cpp	\
+		./tests.cpp							
 
 BLACK		:= $(shell tput -Txterm setaf 0)
 RED			:= $(shell tput -Txterm setaf 1)
@@ -29,11 +30,6 @@ clean:
 	@ $(RM) $(OBJS)
 	@echo "$(RED)Deleting objects...$(RESET)"
 
-fclean: clean
-	@ $(RM) $(OBJS)
-	@ $(MAKE) fclean $(CXX)
-	@echo "$(RED)Deleting executables...$(RESET)"
-
-re: fclean all
+re: clean all
 
 .PHONY: all clean fclean re

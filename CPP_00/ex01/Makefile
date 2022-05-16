@@ -33,14 +33,9 @@ clean:
 	@ $(RM) $(OBJS)
 	@echo "$(RED)Deleting objects...$(RESET)"
 
-fclean: clean
-	@ $(RM) $(OBJS)
-	@ $(MAKE) fclean $(CXX)
-	@echo "$(RED)Deleting executables...$(RESET)"
-
 san:
 	@(c++ -o $(NAME) $(SRCS) $(CXXFLAGS) $(SAN))
 
-re: fclean all
+re: clean all
 
 .PHONY: all clean fclean re

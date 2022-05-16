@@ -15,6 +15,16 @@ Contact::~Contact(void)
     return ;
 }
 
+void    Contact::clean_last_input(void)
+{
+    this->first_name = "";
+    this->last_name = "";
+    this->nickname = "";
+    this->phone_number = "";
+    this->darkest_secret = "";
+    Contact::create_contact();
+}
+
 void    Contact::create_contact(void)
 {
     while (first_name.compare("") == 0)

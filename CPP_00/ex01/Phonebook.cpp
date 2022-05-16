@@ -15,12 +15,7 @@ void    PhoneBook::add(const int nb_iteration)
 {
     if (nb_iteration > 7)
     {
-        this->contact[7].first_name = "";
-        this->contact[7].last_name = "";
-        this->contact[7].nickname = "";
-        this->contact[7].phone_number = "";
-        this->contact[7].darkest_secret = "";
-        this->contact[7].create_contact();
+        this->contact[7].clean_last_input();
     }
     else
     {
@@ -37,7 +32,7 @@ void    PhoneBook::display(const int nb_iteration)
 
     id = 0;
     i = 0;
-    while (this->contact[i].first_name.compare(""))
+    while (i < nb_iteration && i <= 7)
     {
         this->contact[i].show_all_contact(i);
         std::cout << std::endl;
