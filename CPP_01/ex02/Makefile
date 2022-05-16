@@ -1,10 +1,10 @@
-NAME = megaphone
+NAME = Hi_this_is_brain
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./megaphone.cpp								
+SRCS =	./main.cpp 
 
 BLACK		:= $(shell tput -Txterm setaf 0)
 RED			:= $(shell tput -Txterm setaf 1)
