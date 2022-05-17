@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 17 10:36:46 2022
+# Make data base, printed on Tue May 17 10:50:44 2022
 
 # Variables
 
@@ -69,7 +69,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 MANAGERPID = 117222
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-7461e9b5-1e79-461c-9f88-2d4a3ca8f84e.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-d05714a9-35d4-484e-9e6a-9b8247ed1c26.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/llescure
 # environment
@@ -284,6 +284,6 @@ GNUmakefile:
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
  
-# Finished Make data base on Tue May 17 10:36:46 2022
+# Finished Make data base on Tue May 17 10:50:44 2022
 
  

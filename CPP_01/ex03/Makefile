@@ -1,11 +1,15 @@
-NAME = account
+NAME = Unnecessary_violence
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./Account.cpp	\
-		./tests.cpp							
+SRCS =	./main.cpp \
+		./Weapon.cpp \
+		./HumanA.cpp \
+		./HumanB.cpp
+
+SAN = -g3 -fsanitize=address
 
 BLACK		:= $(shell tput -Txterm setaf 0)
 RED			:= $(shell tput -Txterm setaf 1)
@@ -19,9 +23,6 @@ RESET		:= $(shell tput -Txterm sgr0)
 
 RM = rm -rf
 
-SAN = -g3 -fsanitize=address
-
-
 $(NAME): $(OBJS)
 		@echo "$(LIGHTPURPLE)Compilation...$(RESET)"
 		@($(CXX) -o $(NAME) $(SRCS) $(CXXFLAGS))
@@ -33,9 +34,9 @@ clean:
 	@ $(RM) $(OBJS)
 	@echo "$(RED)Deleting objects...$(RESET)"
 
+re: clean all
+
 san:
 	@(c++ -o $(NAME) $(SRCS) $(CXXFLAGS) $(SAN))
-
-re: clean all
 
 .PHONY: all clean re
