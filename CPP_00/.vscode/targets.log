@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 17 10:39:45 2022
+# Make data base, printed on Tue May 17 14:34:55 2022
 
 # Variables
 
@@ -69,7 +69,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 MANAGERPID = 117222
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-00a041a1-b066-437e-89f9-53a39ecb02a6.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-133bc621-7570-4704-b44b-8564672d3958.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/llescure
 # environment
@@ -103,7 +103,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/39160/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 118829
+GIO_LAUNCHED_DESKTOP_FILE_PID = 178662
 # automatic
 %F = $(notdir $%)
 # environment
@@ -129,7 +129,7 @@ VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/llescure/.config/Code/CachedData/dfd34e8
 # environment
 LOGNAME = llescure
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -215,7 +215,7 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/39160/docker.sock
 # environment
-VSCODE_PID = 118829
+VSCODE_PID = 178662
 # variable set hash-table stats:
 # Load=102/1024=10%, Rehash=0, Collisions=7/124=6%
 
@@ -283,7 +283,6 @@ GNUmakefile:
 # strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
 # Load=14/8192=0%, Rehash=0, Collisions=1/17=6%
- 
-# Finished Make data base on Tue May 17 10:39:45 2022
+# Finished Make data base on Tue May 17 14:34:55 2022
 
  

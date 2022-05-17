@@ -5,9 +5,8 @@ Zombie::Zombie(void)
     return ;
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name): _name(name)
 {
-    this->_name = name;
     return ;
 }
 
