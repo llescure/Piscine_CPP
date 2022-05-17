@@ -19,6 +19,8 @@ BLUE		:= $(shell tput -Txterm setaf 6)
 WHITE		:= $(shell tput -Txterm setaf 7)
 RESET		:= $(shell tput -Txterm sgr0)
 
+SAN = -g3 -fsanitize=address
+
 RM = rm -rf
 
 $(NAME): $(OBJS)
@@ -33,5 +35,8 @@ clean:
 	@echo "$(RED)Deleting objects...$(RESET)"
 
 re: clean all
+
+san:
+	@(c++ -o $(NAME) $(SRCS) $(CXXFLAGS) $(SAN))
 
 .PHONY: all clean re

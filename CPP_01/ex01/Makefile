@@ -8,6 +8,8 @@ SRCS =	./main.cpp \
 		./Zombie.cpp \
 		./zombieHorde.cpp 						
 
+SAN = -g3 -fsanitize=address
+
 BLACK		:= $(shell tput -Txterm setaf 0)
 RED			:= $(shell tput -Txterm setaf 1)
 GREEN		:= $(shell tput -Txterm setaf 2)
@@ -32,5 +34,8 @@ clean:
 	@echo "$(RED)Deleting objects...$(RESET)"
 
 re: clean all
+
+san:
+	@(c++ -o $(NAME) $(SRCS) $(CXXFLAGS) $(SAN))
 
 .PHONY: all clean re

@@ -1,10 +1,20 @@
 #include "Zombie.hpp"
 #include <iostream>
 
+Zombie *zombieHorde(int N, std::string name);
+
 int main(void)
 {
-    Zombie  test("test");
+    Zombie  *test;
+    int     i;
     
-    test.zombieHorde(10, "Brain Eater");
+    i = 0;
+    test = zombieHorde(10, "Brain Eater");
+    while (i < 10)
+    {
+        test[i].announce();
+        i++;
+    }
+    delete[] test;
     return 0;
 }
