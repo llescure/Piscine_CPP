@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 17 18:01:21 2022
+# Make data base, printed on Wed May 18 09:43:43 2022
 
 # Variables
 
@@ -47,7 +47,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 9:503786
+JOURNAL_STREAM = 9:307633
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -67,15 +67,15 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/39160/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 117222
+MANAGERPID = 60373
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-faa614c8-1e9d-47df-bc59-fe3067dce8c6.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-b701916b-54b9-4c8d-90b3-46c296787884.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/llescure
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_39160_JYvBIX
+KRB5CCNAME = FILE:/tmp/krb5cc_39160_lrtXMR
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -83,7 +83,7 @@ PATH = /mnt/nfs/homes/llescure/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # environment
 GPG_AGENT_INFO = /run/user/39160/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e3r11p8.clusters.42paris.fr:@/tmp/.ICE-unix/117744,unix/e3r11p8.clusters.42paris.fr:/tmp/.ICE-unix/117744
+SESSION_MANAGER = local/e1r9p7.clusters.42paris.fr:@/tmp/.ICE-unix/60838,unix/e1r9p7.clusters.42paris.fr:/tmp/.ICE-unix/60838
 # environment
 XDG_RUNTIME_DIR = /run/user/39160
 # environment
@@ -93,7 +93,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 7def1982e0de42119694e6f1984a195e
+INVOCATION_ID = 6c149065c8504ab087aea67cd8f5a41d
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -103,7 +103,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/39160/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 178662
+GIO_LAUNCHED_DESKTOP_FILE_PID = 62666
 # automatic
 %F = $(notdir $%)
 # environment
@@ -115,7 +115,7 @@ PWD = /mnt/nfs/homes/llescure/Piscine_CPP/CPP_01
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 117670
+SSH_AGENT_PID = 60697
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -215,7 +215,7 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/39160/docker.sock
 # environment
-VSCODE_PID = 178662
+VSCODE_PID = 62666
 # variable set hash-table stats:
 # Load=102/1024=10%, Rehash=0, Collisions=7/124=6%
 
@@ -225,7 +225,7 @@ VSCODE_PID = 178662
 
 # Directories
 
-# . (device 56, inode 274042204): 10 files, no impossibilities.
+# . (device 60, inode 274042204): 10 files, no impossibilities.
 
 # 10 files, no impossibilities in 1 directories.
 
@@ -283,7 +283,6 @@ GNUmakefile:
 # strcache performance: lookups = 21 / hit rate = 14%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/21=5%
- 
-# Finished Make data base on Tue May 17 18:01:21 2022
+# Finished Make data base on Wed May 18 09:43:43 2022
 
  
