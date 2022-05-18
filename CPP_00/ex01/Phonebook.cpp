@@ -15,7 +15,7 @@ void    PhoneBook::add(const int nb_iteration)
 {
     if (nb_iteration > 7)
     {
-        this->contact[7].clean_last_input();
+        this->contact[0].clean_last_input();
     }
     else
     {
