@@ -32,7 +32,7 @@ void    Contact::create_contact(void)
         std::cout << "Please enter first name of new contact" << std::endl;
         if (!std::getline(std::cin, this->first_name))
         {
-            break;
+            return ;
         }
     }
     while (last_name.compare("") == 0)
@@ -40,7 +40,7 @@ void    Contact::create_contact(void)
         std::cout << "Please enter last name of new contact" << std::endl;
         if (!std::getline(std::cin, this->last_name))
         {
-            break;
+            return ;
         }
     }
     while (nickname.compare("") == 0)
@@ -48,7 +48,7 @@ void    Contact::create_contact(void)
         std::cout << "Please enter nickname of new contact" << std::endl;
         if (!std::getline(std::cin, this->nickname))
         {
-            break;
+            return ;
         }
     }
     while (phone_number.compare("") == 0)
@@ -56,7 +56,7 @@ void    Contact::create_contact(void)
         std::cout << "Please enter phone number of new contact" << std::endl;
         if (!std::getline(std::cin, this->phone_number))
         {
-            break;
+            return ;
         }
     }
     while (darkest_secret.compare("") == 0)
@@ -64,7 +64,7 @@ void    Contact::create_contact(void)
         std::cout << "Please enter darkest secret of new contact" << std::endl;
         if (!std::getline(std::cin, this->darkest_secret))
         {
-            break;
+            return ;
         }
     }
     std::cout << std::endl;
