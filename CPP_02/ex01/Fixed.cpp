@@ -8,13 +8,16 @@ Fixed::Fixed(void)
 
 Fixed::Fixed(const int number)
 {
-    setRawBits(number);
+    std::cout << "Int constructor called" << std::endl;
+
+    this->_fixed_number = (int)round(number * (1 << this->_bits_number));
     return ;
 }
 
 Fixed::Fixed(const float number)
 {
-    setRawBits(number);
+    std::cout << "Float constructor called" << std::endl;
+    this->_fixed_number = (int)round(number * (1 << this->_bits_number));
     return ;
 }
 
@@ -34,13 +37,13 @@ Fixed::~Fixed(void)
 
 int     Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+   // std::cout << "getRawBits member function called" << std::endl;
     return (this->_fixed_number);
 }
 
 void    Fixed::setRawBits(int const raw)
 {
-    std::cout << "setRawBits member function called" << std::endl;
+    //std::cout << "setRawBits member function called" << std::endl;
     
     this->_fixed_number = raw;
     return ;
@@ -70,5 +73,6 @@ Fixed &   Fixed::operator=(Fixed const & rhs)
 
 std::ostream &  operator<<(std::ostream &o, Fixed const & i)
 {
-    o << i.getRawBits();
+    o << i.toFloat();
+    return (o);
 }
