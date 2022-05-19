@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 19 10:19:12 2022
+# Make data base, printed on Thu May 19 13:47:11 2022
 
 # Variables
 
@@ -41,13 +41,11 @@ CURDIR := /mnt/nfs/homes/llescure/Piscine_CPP
 # makefile
 SHELL = /bin/sh
 # environment
-GDM_LANG = en
-# environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 9:340936
+JOURNAL_STREAM = 9:58190
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
@@ -67,15 +65,15 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/39160/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 76060
+MANAGERPID = 4883
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-1df93994-876a-4d4c-bdd7-29679ced0a39.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-3b07bb88-38d4-4734-9cdc-bc6f8910b0f7.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/llescure
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session4
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_39160_wGWLhi
+KRB5CCNAME = FILE:/tmp/krb5cc_39160_6blbeQ
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -83,7 +81,7 @@ PATH = /mnt/nfs/homes/llescure/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # environment
 GPG_AGENT_INFO = /run/user/39160/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e1r9p7.clusters.42paris.fr:@/tmp/.ICE-unix/76556,unix/e1r9p7.clusters.42paris.fr:/tmp/.ICE-unix/76556
+SESSION_MANAGER = local/e3r5p15.clusters.42paris.fr:@/tmp/.ICE-unix/5377,unix/e3r5p15.clusters.42paris.fr:/tmp/.ICE-unix/5377
 # environment
 XDG_RUNTIME_DIR = /run/user/39160
 # environment
@@ -93,7 +91,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 578198b0bb484c95b7e3ef144255c9db
+INVOCATION_ID = f039075a61224871856184c25cfda999
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -103,7 +101,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/39160/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 86699
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5803
 # automatic
 %F = $(notdir $%)
 # environment
@@ -115,7 +113,7 @@ PWD = /mnt/nfs/homes/llescure/Piscine_CPP
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 76520
+SSH_AGENT_PID = 5322
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -169,8 +167,6 @@ OLDPWD = /mnt/nfs/homes/llescure
 # automatic
 *F = $(notdir $*)
 # environment
-LANGUAGE = en
-# environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
 VSCODE_IPC_HOOK = /run/user/39160/vscode-31871942-1.66.2-main.sock
@@ -215,9 +211,9 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/39160/docker.sock
 # environment
-VSCODE_PID = 86699
+VSCODE_PID = 5803
 # variable set hash-table stats:
-# Load=102/1024=10%, Rehash=0, Collisions=7/124=6%
+# Load=100/1024=10%, Rehash=0, Collisions=7/122=6%
 
 # Pattern-specific Variable Values
 
@@ -283,7 +279,6 @@ GNUmakefile:
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
 # Load=15/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Thu May 19 10:19:12 2022
- 
+# Finished Make data base on Thu May 19 13:47:11 2022
 
  
