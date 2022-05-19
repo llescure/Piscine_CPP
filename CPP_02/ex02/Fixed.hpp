@@ -17,12 +17,12 @@ class Fixed
 
     // Comparison operators
 
-    Fixed &     operator>(Fixed const & rhs);
-    Fixed &     operator<(Fixed const & rhs);
-    Fixed &     operator>=(Fixed const & rhs);
-    Fixed &     operator<=(Fixed const & rhs);
-    Fixed &     operator==(Fixed const & rhs);
-    Fixed &     operator!=(Fixed const & rhs);
+    bool    operator>(Fixed const & rhs);
+    bool    operator<(Fixed const & rhs);
+    bool    operator>=(Fixed const & rhs);
+    bool    operator<=(Fixed const & rhs);
+    bool    operator==(Fixed const & rhs);
+    bool    operator!=(Fixed const & rhs);
 
     // Arithmetic operators
 
@@ -33,8 +33,12 @@ class Fixed
 
     // Increment and decrement operators
 
+    // Fixed &     operator++();
+    // Fixed       operator++(Fixed const &rhs);
+    // Fixed &     operator--();
+    // Fixed       operator--(Fixed const &rhs);
 
-    int                sgetRawBits(void) const;
+    int                getRawBits(void) const;
     void               setRawBits(int const raw);
     float              toFloat(void) const;
     int                toInt(void) const;
