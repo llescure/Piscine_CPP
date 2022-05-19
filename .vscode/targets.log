@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 19 09:34:03 2022
+# Make data base, printed on Thu May 19 10:19:12 2022
 
 # Variables
 
@@ -69,7 +69,7 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 MANAGERPID = 76060
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-c2cd6d38-816a-400f-bec6-1716ee046bca.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/39160/vscode-ipc-1df93994-876a-4d4c-bdd7-29679ced0a39.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/llescure
 # environment
@@ -103,7 +103,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/39160/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 77462
+GIO_LAUNCHED_DESKTOP_FILE_PID = 86699
 # automatic
 %F = $(notdir $%)
 # environment
@@ -215,7 +215,7 @@ LANG = C
 # environment
 DOCKER_HOST = unix:///run/user/39160/docker.sock
 # environment
-VSCODE_PID = 77462
+VSCODE_PID = 86699
 # variable set hash-table stats:
 # Load=102/1024=10%, Rehash=0, Collisions=7/124=6%
 
@@ -283,7 +283,7 @@ GNUmakefile:
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
 # Load=15/8192=0%, Rehash=0, Collisions=1/18=6%
+# Finished Make data base on Thu May 19 10:19:12 2022
  
-# Finished Make data base on Thu May 19 09:34:03 2022
 
  
