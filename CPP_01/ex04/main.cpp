@@ -4,11 +4,12 @@
 
 void    copy_paste_replace(const char *file, const std::string s1, const std::string s2);
 
-int main(void)
+int main(int argc, char **argv)
 {
-    copy_paste_replace("test.txt", " ", "/");
-    copy_paste_replace("test2.txt", "42", "abcdefghijklmnopqrstu");
-    copy_paste_replace("test3.txt", "j'aime le chocolat", "lol");
-    copy_paste_replace("truc.txt", "", "21");
+    if (argc != 4)
+    {
+        std::cout << "ERROR: Wrong number of argument" << std::endl;
+    }
+    copy_paste_replace(argv[1], argv[2], argv[3]);
     return (0);
 }
