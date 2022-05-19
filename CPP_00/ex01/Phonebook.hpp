@@ -11,8 +11,6 @@
 class PhoneBook 
 {
     public: 
-        Contact contact[8];
-
         PhoneBook(void);
         ~PhoneBook(void);
 
@@ -20,6 +18,7 @@ class PhoneBook
         void    display(const int nb_iteration);
 
     private:
+        Contact contact[8];
         void    search(const int);
 };
 
