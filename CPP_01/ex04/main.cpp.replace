@@ -9,7 +9,6 @@ int main(int argc, char **argv)
     if (argc != 4)
     {
         std::cout << "ERROR: Wrong number of argument" << std::endl;
-        return (-1);
     }
     copy_paste_replace(argv[1], argv[2], argv[3]);
     return (0);

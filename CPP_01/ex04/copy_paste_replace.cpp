@@ -87,6 +87,10 @@ void    copy_paste_replace(const char* file, const std::string s1, const std::st
         pos_s1 = 0;
         while ((pos_s1 = (int)line.find(s1, pos_s1)) != -1)
         {
+            if (s1.length() == 0 || s2.length() == 0) 
+            {
+                break ;
+            }
             replace_string(s1, s2, &line, pos_s1);
             pos_s1 += s2.length();
         }

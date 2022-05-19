@@ -36,27 +36,12 @@ void Harl::complain(std::string level)
         case 1:
             this->debug();
             std::cout << std::endl;
-            this->info();
-            std::cout << std::endl;
-            this->warning();
-            std::cout << std::endl;
-            this->error();
-            std::cout << std::endl;
-            break;
         case 2:
             this->info();
             std::cout << std::endl;
-            this->warning();
-            std::cout << std::endl;
-            this->error();
-            std::cout << std::endl;
-            break;
         case 3:
             this->warning();
             std::cout << std::endl;
-            this->error();
-            std::cout << std::endl;
-            break;
         case 4:
             this->error();
             std::cout << std::endl;
