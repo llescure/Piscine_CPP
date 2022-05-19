@@ -1,4 +1,4 @@
-NAME = Canon
+NAME = Now_we're_talking
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
