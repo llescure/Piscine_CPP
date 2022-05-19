@@ -1,6 +1,6 @@
 # Piscine_CPP
 
-Multiple exercice to learn the basics of C++ and discover object oriented programming languages:
+Multiple exercices to learn the basics of C++ and discover object oriented programming language:
 * CPP_00 : Classes, member functions, stdio streams, initialization list
 * CPP_01: Memory allocation, pointers to members, references and switch
 * CPP_02: Polymorphism, operator overloading and canonical class form
