@@ -10,9 +10,9 @@ Fixed::Fixed(void)
 
 Fixed::Fixed(const int number)
 {
-    // std::cout << "Int constructor called" << std::endl;
+  //  std::cout << "Int constructor called" << std::endl;
 
-    this->_fixed_number = (int)round(number * (1 << this->_bits_number));
+    this->_fixed_number = (int)number << this->_bits_number;
     return ;
 }
 
@@ -57,56 +57,64 @@ float   Fixed::toFloat(void) const
 
 int     Fixed::toInt(void) const
 {
-    return (this->_fixed_number / (int)(1 << this->_bits_number));
+    return (this->_fixed_number >> this->_bits_number);
 }
 
-static Fixed &  min(Fixed & first, Fixed & second)
-{
-    if (first.getRawBits() < second.getRawBits())
-    {
-        return (first);
-    }
-    else
-    {
-        return (second);
-    }
-}
+// static Fixed &  min(Fixed & first, Fixed & second)
+// {
+//     if (first.getRawBits() < second.getRawBits())
+//     {
+//         return (first);
+//     }
+//     else
+//     {
+//         return (second);
+//     }
+// }
 
-static Fixed &  min(Fixed const & first, Fixed const & second)
-{
-    if (first.getRawBits() < second.getRawBits())
-    {
-        return (first);
-    }
-    else
-    {
-        return (second);
-    }
-}
+// static Fixed &  min(Fixed const & first, Fixed const & second)
+// {
+//     static Fixed   copy;
 
-static Fixed &  max(Fixed & first, Fixed & second)
-{
-    if (first.getRawBits() > second.getRawBits())
-    {
-        return (first);
-    }
-    else
-    {
-        return (second);
-    }
-}
+//     if (first.getRawBits() < second.getRawBits())
+//     {
+//         copy.setRawBits(first.getRawBits());
+//         return (copy);
+//     }
+//     else
+//     {
+//         copy.setRawBits(second.getRawBits());
+//         return (copy);
+//     }
+// }
 
-static Fixed &  max(Fixed const & first, Fixed const & second)
-{
-    if (first.getRawBits() > second.getRawBits())
-    {
-        return (first);
-    }
-    else
-    {
-        return (second);
-    }
-}
+// static Fixed &  max(Fixed & first, Fixed & second)
+// {
+//     if (first.getRawBits() > second.getRawBits())
+//     {
+//         return (first);
+//     }
+//     else
+//     {
+//         return (second);
+//     }
+// }
+
+// static Fixed &  max(Fixed const & first, Fixed const & second)
+// {
+//     static Fixed   copy;
+
+//     if (first.getRawBits() > second.getRawBits())
+//     {
+//         copy.setRawBits(first.getRawBits());
+//         return (copy);
+//     }
+//     else
+//     {
+//         copy.setRawBits(second.getRawBits());
+//         return (copy);
+//     }
+// }
 
 // Operators
 
@@ -119,81 +127,95 @@ Fixed &   Fixed::operator=(Fixed const & rhs)
         this->_fixed_number = rhs.getRawBits();
     }
 
-    return *this;
+    return (*this);
 }
 
-Fixed &   Fixed::operator+(Fixed const & rhs)
+Fixed     Fixed::operator+(Fixed const & rhs)
 {
-    Fixed   result;
+    Fixed result;
 
     std::cout << "Plus operator called" << std::endl;
     result.setRawBits(this->_fixed_number + rhs.getRawBits());
     return (result);
 }
 
-Fixed &   Fixed::operator-(Fixed const & rhs)
+Fixed     Fixed::operator-(Fixed const & rhs)
 {
-    Fixed   result;
+    Fixed result;
 
     std::cout << "Minus operator called" << std::endl; 
     result.setRawBits(this->_fixed_number - rhs.getRawBits());
     return (result);
 }
 
-Fixed &   Fixed::operator*(Fixed const & rhs)
-{    
-    Fixed   result;
+Fixed   Fixed::operator*(Fixed const & rhs)
+{   
+    Fixed result;
 
     std::cout << "Multiplication operator called" << std::endl; 
-    result.setRawBits(this->_fixed_number * rhs.getRawBits());
+    result.setRawBits(this->_fixed_number * rhs.getRawBits() >> this->_bits_number);
     return (result);
-
 }
 
-Fixed &   Fixed::operator/(Fixed const & rhs)
+Fixed     Fixed::operator/(Fixed const & rhs)
 {
-    Fixed   result;
+    Fixed result;
 
     std::cout << "Division operator called" << std::endl; 
-    result.setRawBits(this->_fixed_number / rhs.getRawBits());
+    result.setRawBits(this->_fixed_number / rhs.getRawBits() << this->_bits_number);
     return (result);
 }
 
 
-bool    Fixed::operator>(Fixed const & rhs)
+bool    Fixed::operator>(Fixed const & rhs) const
 {
     std::cout << "Strictly superior operator called" << std::endl; 
     return (this->_fixed_number > rhs.getRawBits());
 }
 
-bool    Fixed::operator<(Fixed const & rhs)
+bool    Fixed::operator<(Fixed const & rhs) const
 {
     std::cout << "Strictly inferior operator called" << std::endl; 
     return (this->_fixed_number < rhs.getRawBits());
 }
 
-bool    Fixed::operator>=(Fixed const & rhs)
+bool    Fixed::operator>=(Fixed const & rhs) const
 {
     std::cout << "Superior or equal operator called" << std::endl; 
     return (this->_fixed_number >= rhs.getRawBits());
 }
 
-bool    Fixed::operator<=(Fixed const & rhs)
+bool    Fixed::operator<=(Fixed const & rhs) const
 {
     std::cout << "Inferior operator called" << std::endl; 
     return (this->_fixed_number <= rhs.getRawBits());
 }
 
-bool    Fixed::operator==(Fixed const & rhs)
+bool    Fixed::operator==(Fixed const & rhs) const
 {
     std::cout << "Equality operator called" << std::endl; 
     return (this->_fixed_number == rhs.getRawBits());
 }
 
-bool    Fixed::operator!=(Fixed const & rhs)
+bool    Fixed::operator!=(Fixed const & rhs) const
 {
     std::cout << "Difference operator called" << std::endl; 
     return (this->_fixed_number != rhs.getRawBits());
+}
+
+Fixed &     Fixed::operator++()
+{
+    this->_fixed_number += (1/256 << this->_bits_number);
+    return (*this);
+}
+
+Fixed       Fixed::operator++(int)
+{
+    Fixed   old;
+
+    old = *this;
+    this->_fixed_number += (1/256 << this->_bits_number);
+    return (old);
 }
 
 std::ostream &  operator<<(std::ostream &o, Fixed const & i)

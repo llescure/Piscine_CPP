@@ -17,24 +17,24 @@ class Fixed
 
     // Comparison operators
 
-    bool    operator>(Fixed const & rhs);
-    bool    operator<(Fixed const & rhs);
-    bool    operator>=(Fixed const & rhs);
-    bool    operator<=(Fixed const & rhs);
-    bool    operator==(Fixed const & rhs);
-    bool    operator!=(Fixed const & rhs);
+    bool    operator>(Fixed const & rhs) const;
+    bool    operator<(Fixed const & rhs) const;
+    bool    operator>=(Fixed const & rhs) const;
+    bool    operator<=(Fixed const & rhs) const;
+    bool    operator==(Fixed const & rhs) const;
+    bool    operator!=(Fixed const & rhs) const;
 
     // Arithmetic operators
 
-    Fixed &     operator+(Fixed const & rhs);
-    Fixed &     operator-(Fixed const & rhs);
-    Fixed &     operator*(Fixed const & rhs);
-    Fixed &     operator/(Fixed const & rhs);
+    Fixed   operator+(Fixed const & rhs);
+    Fixed   operator-(Fixed const & rhs);
+    Fixed   operator*(Fixed const & rhs);
+    Fixed   operator/(Fixed const & rhs);
 
     // Increment and decrement operators
 
-    // Fixed &     operator++();
-    // Fixed       operator++(Fixed const &rhs);
+    Fixed &     operator++();
+    Fixed       operator++(int);
     // Fixed &     operator--();
     // Fixed       operator--(Fixed const &rhs);
 
@@ -42,10 +42,10 @@ class Fixed
     void               setRawBits(int const raw);
     float              toFloat(void) const;
     int                toInt(void) const;
-    static Fixed &     min(Fixed & first, Fixed & second);
-    static Fixed &     min(Fixed const & first, Fixed const & second);
-    static Fixed &     max(Fixed & first, Fixed & second);
-    static Fixed &     max(Fixed const & first, Fixed const & second);
+    // static Fixed &     min(Fixed & first, Fixed & second);
+    // static Fixed &     min(Fixed const & first, Fixed const & second);
+    // static Fixed &     max(Fixed & first, Fixed & second);
+    // static Fixed &     max(Fixed const & first, Fixed const & second);
 
     private:
     int                 _fixed_number;

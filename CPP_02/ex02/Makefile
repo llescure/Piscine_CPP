@@ -1,4 +1,4 @@
-NAME = Now_we're_talking
+NAME = Now_were_talking
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
