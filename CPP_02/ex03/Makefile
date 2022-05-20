@@ -1,4 +1,4 @@
-NAME = Canon
+NAME = BSP
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++

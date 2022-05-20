@@ -10,7 +10,7 @@ Fixed::Fixed(const int number)
 {
     std::cout << "Int constructor called" << std::endl;
 
-    this->_fixed_number = (int)round(number * (1 << this->_bits_number));
+    this->_fixed_number = (int)round(number << this->_bits_number);
     return ;
 }
 
@@ -37,14 +37,11 @@ Fixed::~Fixed(void)
 
 int     Fixed::getRawBits(void) const
 {
-   // std::cout << "getRawBits member function called" << std::endl;
     return (this->_fixed_number);
 }
 
 void    Fixed::setRawBits(int const raw)
 {
-    //std::cout << "setRawBits member function called" << std::endl;
-    
     this->_fixed_number = raw;
     return ;
 }
@@ -56,7 +53,7 @@ float   Fixed::toFloat(void) const
 
 int     Fixed::toInt(void) const
 {
-    return (this->_fixed_number / (int)(1 << this->_bits_number));
+    return (this->_fixed_number >> this->_bits_number);
 }
 
 Fixed &   Fixed::operator=(Fixed const & rhs)

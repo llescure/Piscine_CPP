@@ -60,61 +60,61 @@ int     Fixed::toInt(void) const
     return (this->_fixed_number >> this->_bits_number);
 }
 
-// static Fixed &  min(Fixed & first, Fixed & second)
-// {
-//     if (first.getRawBits() < second.getRawBits())
-//     {
-//         return (first);
-//     }
-//     else
-//     {
-//         return (second);
-//     }
-// }
+Fixed &  Fixed::min(Fixed & first, Fixed & second)
+{
+    if (first.getRawBits() < second.getRawBits())
+    {
+        return (first);
+    }
+    else
+    {
+        return (second);
+    }
+}
 
-// static Fixed &  min(Fixed const & first, Fixed const & second)
-// {
-//     static Fixed   copy;
+Fixed &  Fixed::min(Fixed const & first, Fixed const & second)
+{
+    static Fixed   copy;
 
-//     if (first.getRawBits() < second.getRawBits())
-//     {
-//         copy.setRawBits(first.getRawBits());
-//         return (copy);
-//     }
-//     else
-//     {
-//         copy.setRawBits(second.getRawBits());
-//         return (copy);
-//     }
-// }
+    if (first.getRawBits() < second.getRawBits())
+    {
+        copy.setRawBits(first.getRawBits());
+        return (copy);
+    }
+    else
+    {
+        copy.setRawBits(second.getRawBits());
+        return (copy);
+    }
+}
 
-// static Fixed &  max(Fixed & first, Fixed & second)
-// {
-//     if (first.getRawBits() > second.getRawBits())
-//     {
-//         return (first);
-//     }
-//     else
-//     {
-//         return (second);
-//     }
-// }
+Fixed &  Fixed::max(Fixed & first, Fixed & second)
+{
+    if (first.getRawBits() > second.getRawBits())
+    {
+        return (first);
+    }
+    else
+    {
+        return (second);
+    }
+}
 
-// static Fixed &  max(Fixed const & first, Fixed const & second)
-// {
-//     static Fixed   copy;
+Fixed &  Fixed::max(Fixed const & first, Fixed const & second)
+{
+    static Fixed   copy;
 
-//     if (first.getRawBits() > second.getRawBits())
-//     {
-//         copy.setRawBits(first.getRawBits());
-//         return (copy);
-//     }
-//     else
-//     {
-//         copy.setRawBits(second.getRawBits());
-//         return (copy);
-//     }
-// }
+    if (first.getRawBits() > second.getRawBits())
+    {
+        copy.setRawBits(first.getRawBits());
+        return (copy);
+    }
+    else
+    {
+        copy.setRawBits(second.getRawBits());
+        return (copy);
+    }
+}
 
 // Operators
 
@@ -205,7 +205,7 @@ bool    Fixed::operator!=(Fixed const & rhs) const
 
 Fixed &     Fixed::operator++()
 {
-    this->_fixed_number += (1/256 << this->_bits_number);
+    this->_fixed_number += (int)round(0.00390625 * (1 << this->_bits_number));
     return (*this);
 }
 
@@ -214,7 +214,22 @@ Fixed       Fixed::operator++(int)
     Fixed   old;
 
     old = *this;
-    this->_fixed_number += (1/256 << this->_bits_number);
+    this->_fixed_number += (int)round(0.00390625 * (1 << this->_bits_number));
+    return (old);
+}
+
+Fixed &     Fixed::operator--()
+{
+    this->_fixed_number -= (int)round(0.00390625 * (1 << this->_bits_number));
+    return (*this);
+}
+
+Fixed       Fixed::operator--(int)
+{
+    Fixed   old;
+
+    old = *this;
+    this->_fixed_number -= (int)round(0.00390625 * (1 << this->_bits_number));
     return (old);
 }
 
