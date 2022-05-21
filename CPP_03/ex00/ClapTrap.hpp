@@ -20,6 +20,8 @@ class ClapTrap
     void            beRepaired(unsigned int amount);
     unsigned int    getEnergyPoint(void);
     unsigned int    getHitPoint(void);
+    unsigned int    getAttackDamage(void);
+    void            setAttackDamage(unsigned int value);
 
 
     private:
