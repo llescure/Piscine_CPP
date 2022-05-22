@@ -20,6 +20,8 @@ Fixed::~Fixed(void)
     return ;
 }
 
+
+
 Fixed &   Fixed::operator=(Fixed const & rhs)
 {
     std::cout << "Copy assignment operator called" << std::endl; 
