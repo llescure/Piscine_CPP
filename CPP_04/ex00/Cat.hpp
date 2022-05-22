@@ -5,7 +5,7 @@
 #include <string>
 #include "Animal.hpp"
 
-class Cat
+class Cat: public Animal
 {
     public: 
 
@@ -14,10 +14,6 @@ class Cat
     Cat(Cat const &src);
 
     Cat & operator=(Cat const &rhs);
-
-
-    private:
-
 };
 
 #endif

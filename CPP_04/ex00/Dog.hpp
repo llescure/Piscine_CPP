@@ -9,10 +9,10 @@ class Dog : public Animal
     public:
 
     Dog(void);
-    Dog(Dog const &src);
+    Dog(Dog const & src);
     ~Dog(void);
 
-    Dog & const(Dog const &rhs);
+    Dog & operator=(Dog const & rhs);
 };
 
 #endif
