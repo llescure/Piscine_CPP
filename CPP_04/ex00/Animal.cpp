@@ -1,6 +1,6 @@
 #include "Animal.hpp"
 
-Animal::Animal(void): type("Octopus")
+Animal::Animal(void): _type("Octopus")
 {
     std::cout << "Animal constructor called" << std::endl;
     return ;
@@ -19,11 +19,11 @@ Animal::~Animal(void)
     return ;
 }
 
-Animal & Animal::operator(Animal const &rhs)
+Animal & Animal::operator=(Animal const &rhs)
 {
     if (this != &rhs)
     {
-        this->type = rhs.getType(void);
+        this->_type = rhs.getType();
     }
     return (*this);
 }
@@ -33,7 +33,7 @@ const std::string     Animal::getType(void) const
     return (this->_type);
 }
 
-void    makeSound(void) const
+void    Animal::makeSound(void) const
 {
     if (this->_type == "Cat")
     {

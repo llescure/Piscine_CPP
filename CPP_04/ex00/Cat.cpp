@@ -23,6 +23,7 @@ Cat & Cat::operator=(Cat const &rhs)
 {
     if (this != &rhs)
     {
-        this->type = rhs.getType(void);
+        this->_type = rhs.getType();
     }
+    return (*this);
 }

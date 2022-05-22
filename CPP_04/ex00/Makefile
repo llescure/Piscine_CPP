@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = Animal
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
