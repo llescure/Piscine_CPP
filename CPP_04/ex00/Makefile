@@ -7,7 +7,9 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS =	./main.cpp \
 		./Cat.cpp \
 		./Dog.cpp \
-		./Animal.cpp 
+		./Animal.cpp \
+		./WrongAnimal.cpp \
+		./WrongCat.cpp
 
 BLACK		:= $(shell tput -Txterm setaf 0)
 RED			:= $(shell tput -Txterm setaf 1)
