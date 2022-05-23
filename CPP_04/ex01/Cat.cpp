@@ -4,14 +4,15 @@ Cat::Cat(void)
 {
     std::cout << "Cat constructor called" << std::endl;
     this->_type = "Cat";
-    this->_attribute = new Brain;
+    this->_attribute = new Brain();
     return ;
 }
 
 Cat::Cat(Cat const &src)
 {
     std::cout << "Cat copy constructor called" << std::endl;
-    *this = src;
+    this->_type = src.getType();
+    this->_attribute = new Brain(*src.getBrain());
     return ;
 }
 
@@ -27,6 +28,7 @@ Cat & Cat::operator=(Cat const &rhs)
     if (this != &rhs)
     {
         this->_type = rhs.getType();
+        this->_attribute = new Brain(*rhs.getBrain());
     }
     return (*this);
 }
@@ -54,4 +56,9 @@ void    Cat::showIdeas(void) const
         }
         std::cout << "Cat's idea: " << this->_attribute->ideas[i] << std::endl;
     }
+}
+
+Brain   *Cat::getBrain(void) const
+{
+    return (this->_attribute);
 }

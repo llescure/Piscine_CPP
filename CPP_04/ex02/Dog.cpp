@@ -18,7 +18,8 @@ Dog::~Dog(void)
 Dog::Dog(Dog const &src)
 {
     std::cout << "Dog copy constructor called" << std::endl;
-    *this = src;
+    this->_type = src.getType();
+    this->_attribute = new Brain(*src.getBrain());
     return ;
 }
 
@@ -27,6 +28,7 @@ Dog & Dog::operator=(Dog const &rhs)
     if (this != &rhs)
     {
         this->_type = rhs.getType();
+        this->_attribute = new Brain(*rhs.getBrain());
     }
     return (*this);
 }
@@ -54,4 +56,9 @@ void    Dog::showIdeas(void) const
         }
         std::cout << "Dog's idea: " << this->_attribute->ideas[i] << std::endl;
     }
+}
+
+Brain   *Dog::getBrain(void) const
+{
+    return (this->_attribute);
 }

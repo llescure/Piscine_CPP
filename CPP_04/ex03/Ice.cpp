@@ -9,7 +9,7 @@ Ice::Ice(void)
 
 Ice::Ice(Ice const &src)
 {
-    *this = src;
+    this->_type = src.getType();
     return ;
 }
 
@@ -37,7 +37,7 @@ Ice &   Ice::operator=(Ice const &rhs)
 {
     if (this != &rhs)
     {
-        *this = rhs;
+        this->_type = rhs.getType();
     }
     return (*this);
 }

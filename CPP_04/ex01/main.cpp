@@ -7,6 +7,7 @@
 int main()
 {
     const Animal    *boule = new Dog();
+    const Animal    *lol = new Animal(*boule);
     const Animal    *garfield = new Cat();
     int             tab_size = 4;
     Animal          *tab[tab_size];
@@ -17,6 +18,9 @@ int main()
 
     boule->addIdea("I want to bury a bone", 0);
     boule->showIdeas();
+    std::cout << std::endl;
+    lol->showIdeas();
+    std::cout << std::endl;
     garfield->addIdea("I want to eat lasagna", 0);
     garfield->showIdeas();
     std::cout << std::endl;
@@ -54,6 +58,7 @@ int main()
     std::cout << std::endl;
     delete boule;
     delete garfield;
+    delete lol;
 
     return 0;
 }

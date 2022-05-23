@@ -20,6 +20,8 @@ class Dog : public AAnimal
     virtual void    addIdea(const std::string idea, const int id) const;
     virtual void    showIdeas(void) const;
 
+    Brain           *getBrain(void) const;
+
 
     private:
 

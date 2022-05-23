@@ -9,7 +9,7 @@ Cure::Cure(void)
 
 Cure::Cure(Cure const &src)
 {
-    *this = src;
+    this->_type = src.getType();
     return ;
 }
 
@@ -37,7 +37,7 @@ Cure &   Cure::operator=(Cure const &rhs)
 {
     if (this != &rhs)
     {
-        *this = rhs;
+        this->_type = rhs.getType();
     }
     return (*this);
 }
