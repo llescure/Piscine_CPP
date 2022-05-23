@@ -1,5 +1,10 @@
 #include "Materia.hpp"
 
+AMateria::AMateria(void)
+{
+    return ;
+}
+
 AMateria::AMateria(std::string const &type): _type(type)
 {
     std::cout << "AMateria constructor called" << std::endl;

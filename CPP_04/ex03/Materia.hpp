@@ -13,6 +13,7 @@ class AMateria
 
     public:
 
+    AMateria(void);
     AMateria(std::string const & type);
     virtual ~AMateria(void);
     AMateria(AMateria const & src);
