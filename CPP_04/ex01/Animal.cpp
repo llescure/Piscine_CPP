@@ -38,3 +38,16 @@ void    Animal::makeSound(void) const
     std::cout << this->_type << ": Blopblopblop" << std::endl;
     return ;
 }
+
+void    Animal::addIdea(const std::string idea, const int id) const
+{
+    (void) idea;
+    (void) id;
+    std::cout << this->_type << " has no brain. It can't have new idea" << std::endl;
+    return ;
+}
+
+void    Animal::showIdeas(void) const
+{
+    std::cout << this->_type << " has no brain. It can't have new idea" << std::endl;    
+}

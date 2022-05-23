@@ -37,9 +37,21 @@ void    Cat::makeSound(void) const
     return ;
 }
 
-void    Cat::addIdea(const std::string idea) const
+void    Cat::addIdea(const std::string idea, const int id) const
 {
     std::cout << "Cat has a new idea" << std::endl;
-    this->_attribute->ideas[0] = idea;
+    this->_attribute->ideas[id] = idea;
     return ;
+}
+
+void    Cat::showIdeas(void) const
+{
+    for (int i = 0; i < 100; i++)
+    {
+        if (this->_attribute->ideas[i].empty() == true)
+        {
+            return ;
+        }
+        std::cout << "Cat's idea: " << this->_attribute->ideas[i] << std::endl;
+    }
 }

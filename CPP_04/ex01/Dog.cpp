@@ -37,9 +37,21 @@ void    Dog::makeSound(void) const
     return ;
 }
 
-void    Dog::addIdea(const std::string idea) const
+void    Dog::addIdea(const std::string idea, const int id) const
 {
     std::cout << "Dog has a new idea" << std::endl;
-    this->_attribute->ideas[0] = idea;
+    this->_attribute->ideas[id] = idea;
     return ;
+}
+
+void    Dog::showIdeas(void) const
+{
+    for (int i = 0; i < 100; i++)
+    {
+        if (this->_attribute->ideas[i].empty() == true)
+        {
+            return ;
+        }
+        std::cout << "Dog's idea: " << this->_attribute->ideas[i] << std::endl;
+    }
 }
