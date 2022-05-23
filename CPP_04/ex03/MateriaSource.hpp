@@ -17,6 +17,6 @@ class MateriaSource: public IMateriaSource
     ~MateriaSource(void);
 
     MateriaSource &operator=(MateriaSource const &rhs);
-}
+};
 
 #endif

@@ -23,6 +23,6 @@ class AMateria
     virtual void use(ICharacter& target);
 
     AMateria & operator=(AMateria const &rhs);
-}
+};
 
 #endif
