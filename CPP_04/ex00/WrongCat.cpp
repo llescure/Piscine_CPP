@@ -3,11 +3,11 @@
 WrongCat::WrongCat(void)
 {
     std::cout << "WrongCat constructor called" << std::endl;
-    this->_type = "Cat";
+    this->_type = "WrongCat";
     return ;
 }
 
-WrongCat::WrongCat(Cat const &src)
+WrongCat::WrongCat(WrongCat const &src)
 {
     *this = src;
     return ;
@@ -26,4 +26,10 @@ WrongCat & WrongCat::operator=(WrongCat const &rhs)
         this->_type = rhs.getType();
     }
     return (*this);
+}
+
+void    WrongCat::makeSound(void) const
+{
+    std::cout << this->_type << ": [cough] Miaou [cough]" << std::endl;
+    return ;
 }

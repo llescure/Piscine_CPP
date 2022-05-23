@@ -11,9 +11,12 @@ class Dog : public Animal
 
     Dog(void);
     Dog(Dog const & src);
-    ~Dog(void);
+    virtual ~Dog(void);
 
     Dog & operator=(Dog const & rhs);
+
+    void    makeSound(void) const;
+
 };
 
 #endif

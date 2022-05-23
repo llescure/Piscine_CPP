@@ -10,10 +10,12 @@ class Cat: public Animal
     public: 
 
     Cat(void);
-    ~Cat(void);
+    virtual ~Cat(void);
     Cat(Cat const &src);
 
     Cat & operator=(Cat const &rhs);
+
+    void    makeSound(void) const;
 };
 
 #endif
