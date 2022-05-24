@@ -5,7 +5,7 @@ MateriaSource::MateriaSource(void)
     std::cout << "Constructor MateriaSource called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        this->_inventory = new AMateria();
+        this->_inventory[i] = 0;
     }
     return ;
 }
@@ -15,14 +15,17 @@ MateriaSource::MateriaSource(MateriaSource const & src)
     std::cout << "Copy constructor MateriaSource called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        this->_inventory = new AMateria(*(src.getInventory(i)));
+        this->_inventory[i] = src.getInventory(i)->clone();
     }
 }
 
 MateriaSource::~MateriaSource(void)
 {
-    std::cout << "Constructor MateriaSource called" << std::endl;
-    delete [] this->_inventory;
+    std::cout << "Destructor MateriaSource called" << std::endl;
+    for (int i = 0; i < 4; i++)
+    {
+        delete this->_inventory[i];            
+    }
     return ;
 }
 
@@ -38,7 +41,7 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &rhs)
     {
         for (int i = 0; i < 4; i++)
         {
-            this->_inventory = new AMateria(*(rhs.getInventory(i)));
+            this->_inventory[i] = rhs.getInventory(i)->clone();
         }
     }
     return (*this);
@@ -46,14 +49,15 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &rhs)
 
 void    MateriaSource::learnMateria(AMateria *materia)
 {
-    std::string type;
+    AMateria *current;
 
     for (int i = 0; i < 4; i++)
     {
-        type = this->_inventory[i]->getType();
-        if (type.empty() == true)
+        current = this->_inventory[i];
+        if (current == 0)
         {
-            this->_inventory = new AMateria(*materia);
+            this->_inventory[i] = materia;
+            return ;
         }
     }
     std::cout << "MateriaSource is already full. It can't learn new Materia" << std::endl;
@@ -62,19 +66,18 @@ void    MateriaSource::learnMateria(AMateria *materia)
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
     std::string typeInClass;
-    AMateria    *materia;
 
     for (int i = 0; i < 4; i++)
     {
-        typeInClass = this->_inventory[i]->getType();
+        if (this->_inventory[i] != 0)
+        {
+            typeInClass = this->_inventory[i]->getType();
+        }
         if (typeInClass.compare(type) == 0)
         {
-            materia = new AMateria(type);
-            return (materia);
-        }
-        else
-        {
-            return (0);
+            return (this->_inventory[i]->clone());
         }
     }
+    std::cout << "This Materia doesn't exist" << std::endl;
+    return (0);
 }

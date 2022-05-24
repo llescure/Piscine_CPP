@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "Materia.hpp"
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character: public ICharacter
 {
@@ -18,6 +18,7 @@ class Character: public ICharacter
     virtual void                equip(AMateria *m);
     virtual void                unequip(int idx);
     virtual void                use(int idx, ICharacter &target);
+    AMateria                    *getInventory(int const id) const;
 
     Character &operator=(Character const &rhs);
 };

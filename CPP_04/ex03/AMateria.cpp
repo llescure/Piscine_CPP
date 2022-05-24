@@ -1,4 +1,4 @@
-#include "Materia.hpp"
+#include "AMateria.hpp"
 
 AMateria::AMateria(void)
 {
@@ -26,11 +26,6 @@ AMateria::~AMateria(void)
 std::string const & AMateria::getType() const
 {
     return (this->_type);
-}
-
-AMateria *AMateria::clone() const
-{
-    return (this);
 }
 
 void    AMateria::use(ICharacter & target)

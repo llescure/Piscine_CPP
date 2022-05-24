@@ -1,15 +1,17 @@
-#ifndef MATERIA_HPP
-# define MATERIA_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 #include <iostream>
 #include <string>
 #include "Character.hpp"
 
+class ICharacter;
+
 class AMateria
 {
     protected:
 
-    std::string const   _type;
+    std::string   _type;
 
     public:
 
