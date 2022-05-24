@@ -19,6 +19,7 @@ class Character: public ICharacter
     virtual void                unequip(int idx);
     virtual void                use(int idx, ICharacter &target);
     AMateria                    *getInventory(int const id) const;
+    AMateria                    *getDeleted(int const id) const;
 
     Character &operator=(Character const &rhs);
 };

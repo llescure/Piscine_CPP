@@ -6,10 +6,9 @@ Character::Character(std::string name)
     std::cout << "Character constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        this->_inventory[i] =
-         0;
+        this->_inventory[i] = 0;
+        this->_deleted[i] = 0;
     }
-    this->_deleted = 0;
     return ;
 }
 
@@ -20,6 +19,7 @@ Character::Character(Character const &src)
     for (int i = 0; i < 4; i++)
     {
         this->_inventory[i] =  src.getInventory(i)->clone();
+        this->_deleted[i] =  src.getDeleted(i)->clone();
     }
     return ;
 }
@@ -29,11 +29,11 @@ Character::~Character(void)
     std::cout << "Character destructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
+        if (this->_deleted[i] != 0)
+        {
+            delete this->_deleted[i];
+        }
         delete this->_inventory[i];            
-    }
-    if (this->_deleted != 0)
-    {
-        delete this->_deleted;
     }
     return ;
 }
@@ -52,6 +52,7 @@ Character   & Character::operator=(Character const &rhs)
         for (int i = 0; i < 4; i++)
         {
             this->_inventory[i] =  rhs.getInventory(i)->clone();
+            this->_deleted[i] =  rhs.getDeleted(i)->clone();
         }
     }
     return (*this);
@@ -100,7 +101,14 @@ void    Character::unequip(int idx)
     }
     if (this->_inventory[idx] != 0)
     {
-        this->_deleted = this->_inventory[idx];
+        for (int i = 0; i < 4; i++)
+        {
+            if (this->_deleted[i] == 0)
+            {
+                this->_deleted[i] = this->_inventory[idx];
+                break ;
+            }
+        }
         this->_inventory[idx] = 0;
         return ;
     }
@@ -110,4 +118,9 @@ void    Character::unequip(int idx)
 AMateria *Character::getInventory(int const id) const
 {
     return (this->_inventory[id]);
+}
+
+AMateria *Character::getDeleted(int const id) const
+{
+    return (this->_deleted[id]);
 }

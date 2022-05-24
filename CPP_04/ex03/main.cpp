@@ -40,6 +40,7 @@ int main()
     me->use(-6, *bob);
     std::cout << std::endl;
     me->unequip(0);
+    me->unequip(1);
     me->use(0, *bob);
     std::cout << std::endl;
 

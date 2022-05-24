@@ -17,12 +17,13 @@ class ICharacter
     virtual void                unequip(int idx) = 0;
     virtual void                use(int idx, ICharacter &target) = 0;
     virtual AMateria            *getInventory(int const id) const = 0;
-    
+    virtual AMateria            *getDeleted(int const id) const = 0;
+
     
     protected:
 
     AMateria    *_inventory[4];
-    AMateria    *_deleted;
+    AMateria    *_deleted[4];
     std::string _name;
 };
 
