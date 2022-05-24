@@ -9,21 +9,23 @@ class Bureaucrat
     public:
 
     Bureaucrat(std::string name, int grade);
-    Bureaucrat(Bureaucrat const &src)
+    Bureaucrat(Bureaucrat const &src);
     ~Bureaucrat(void);
 
     Bureaucrat  &operator=(Bureaucrat const &rhs);
 
-    std::string &getName(void);
-    int         &getGrade(void);
-    void        increaseGrade(void);
-    void        decreaseGrade(void);
+    std::string const   &getName(void) const;
+    int const           &getGrade(void) const;
+    void                increaseGrade(void);
+    void                decreaseGrade(void);
 
 
     private:
 
-    std::string _name;
-    int         _grade;
+    std::string const   _name;
+    int                 _grade;
 };
+
+std::ostream &operator<<(std::ostream & o, Bureaucrat const & i);
 
 #endif

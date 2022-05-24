@@ -20,14 +20,24 @@ Bureaucrat::~Bureaucrat(void)
     return ;
 }
 
-std::string &Bureaucrat::getName(void)
+std::string const &Bureaucrat::getName(void) const
 {
     return (this->_name);
 }
 
-int &Bureaucrat::getGrade(void)
+int const &Bureaucrat::getGrade(void) const
 {
     return (this->_grade);
+}
+
+void    Bureaucrat::increaseGrade(void)
+{
+    this->_grade--;
+}
+
+void    Bureaucrat::decreaseGrade(void)
+{
+    this->_grade++;
 }
 
 Bureaucrat  &Bureaucrat::operator=(Bureaucrat const &rhs)
@@ -37,4 +47,10 @@ Bureaucrat  &Bureaucrat::operator=(Bureaucrat const &rhs)
         this->_name = rhs.getName();
         this->_grade = rhs.getGrade();
     }
+}
+
+std::ostream    & operator<<(std::ostream &o, Bureaucrat const &i )
+{
+    o << i.getName() << ", bureaucrat grade" << i.getGrade();
+    return (o);
 }
