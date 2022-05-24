@@ -9,7 +9,10 @@ Brain::Brain(void)
 Brain::Brain(Brain const &src)
 {
     std::cout << "Brain constructor copy called" << std::endl;
-    *this = src;
+    for (int i = 0; i < 100; i++)
+    {
+        this->ideas[i] = src.ideas[i];
+    }
     return ;
 }
 
@@ -23,7 +26,10 @@ Brain   & Brain::operator=(Brain const & rhs)
 {
     if (this != &rhs)
     {
-        *this = rhs;
+        for (int i = 0; i < 100; i++)
+        {
+            this->ideas[i] = rhs.ideas[i];
+        }
     }
     return (*this);
 }

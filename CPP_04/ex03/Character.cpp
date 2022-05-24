@@ -29,10 +29,7 @@ Character::~Character(void)
     std::cout << "Character destructor called" << std::endl;
     for (int i = 0; i < 4; i++)
     {
-        if (this->_deleted[i] != 0)
-        {
-            delete this->_deleted[i];
-        }
+        delete this->_deleted[i];
         delete this->_inventory[i];            
     }
     return ;
@@ -78,7 +75,7 @@ void    Character::use(int idx, ICharacter &target)
 {
     AMateria *current;
 
-    if (idx > 4 || idx < 0)
+    if (idx > 3 || idx < 0)
     {
         std::cout << "The character can only have 4 Mastrias" << std::endl;
         return;
@@ -94,7 +91,7 @@ void    Character::use(int idx, ICharacter &target)
 
 void    Character::unequip(int idx)
 {
-    if (idx > 4 || idx < 0)
+    if (idx > 3 || idx < 0)
     {
         std::cout << "The character can only have 4 Mastrias" << std::endl;
         return;

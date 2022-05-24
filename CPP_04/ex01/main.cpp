@@ -6,6 +6,8 @@
 
 int main()
 {
+    Dog             neos;
+    Dog             tmp = neos;
     const Animal    *boule = new Dog();
     const Animal    *lol = new Animal(*boule);
     const Animal    *garfield = new Cat();

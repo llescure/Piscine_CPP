@@ -8,7 +8,7 @@ SRCS =	./main.cpp \
 		./Character.cpp \
 		./Cure.cpp \
 		./Ice.cpp \
-		./AMateria.cpp \
+		./Materia.cpp \
 		./MateriaSource.cpp
 
 BLACK		:= $(shell tput -Txterm setaf 0)

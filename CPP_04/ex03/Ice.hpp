@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-#include "AMateria.hpp"
+#include "Materia.hpp"
 #include "Character.hpp"
 
 class Ice: public AMateria

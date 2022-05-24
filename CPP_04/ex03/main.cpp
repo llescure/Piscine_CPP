@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "AMateria.hpp"
+#include "Materia.hpp"
 #include "MateriaSource.hpp"
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"

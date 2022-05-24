@@ -1,5 +1,5 @@
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef MATERIA_HPP
+# define MATERIA_HPP
 
 #include <iostream>
 #include <string>

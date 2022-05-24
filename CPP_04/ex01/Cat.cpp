@@ -42,6 +42,11 @@ void    Cat::makeSound(void) const
 void    Cat::addIdea(const std::string idea, const int id) const
 {
     std::cout << "Cat has a new idea" << std::endl;
+    if (id > 99 | id < 0)
+    {
+        std::cout << "Cat can't have that many idea" << std::endl;
+        return ;
+    }
     this->_attribute->ideas[id] = idea;
     return ;
 }

@@ -41,6 +41,11 @@ void    Dog::makeSound(void) const
 
 void    Dog::addIdea(const std::string idea, const int id) const
 {
+    if (id > 99 | id < 0)
+    {
+        std::cout << "Dog can't have that many idea" << std::endl; 
+        return ;
+    }
     std::cout << "Dog has a new idea" << std::endl;
     this->_attribute->ideas[id] = idea;
     return ;

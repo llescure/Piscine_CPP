@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include "ICharacter.hpp"
-#include "AMateria.hpp"
+#include "Materia.hpp"
 
 class Character: public ICharacter
 {
