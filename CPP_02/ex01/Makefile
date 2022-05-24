@@ -32,9 +32,12 @@ clean:
 	@ $(RM) $(OBJS)
 	@echo "$(RED)Deleting objects...$(RESET)"
 
+fclean: clean
+	@ $(RM) $(NAME)
+
 san:
 	@(c++ -o $(NAME) $(SRCS) $(CXXFLAGS) $(SAN))
 
 re: clean all
 
-.PHONY: all clean re
+.PHONY: all clean fclean re

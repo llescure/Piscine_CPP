@@ -77,7 +77,7 @@ void    Character::use(int idx, ICharacter &target)
 
     if (idx > 3 || idx < 0)
     {
-        std::cout << "The character can only have 4 Mastrias" << std::endl;
+        std::cout << "The character can only have 4 materias" << std::endl;
         return;
     }
     current = this->_inventory[idx];
@@ -93,7 +93,7 @@ void    Character::unequip(int idx)
 {
     if (idx > 3 || idx < 0)
     {
-        std::cout << "The character can only have 4 Mastrias" << std::endl;
+        std::cout << "The character can only have 4 materias" << std::endl;
         return;
     }
     if (this->_inventory[idx] != 0)
