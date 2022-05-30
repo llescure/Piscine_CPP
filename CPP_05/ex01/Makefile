@@ -1,4 +1,4 @@
-NAME = Recap
+NAME = Form
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++

@@ -4,13 +4,7 @@
 /* Canonical Form */
 /******************/
 
-Bureaucrat::Bureaucrat(void)
-{
-    std::cout << "Bureaucrat default constructor called" << std::endl;
-    return ;
-}
-
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
     std::cout << "Bureaucrat constructor called" << std::endl;
     try
@@ -24,34 +18,34 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
             throw GradeTooLowException();
         }
     }
-    catch(GradeTooHighException& e)
+    catch (GradeTooHighException &e)
     {
         std::cerr << e.what() << '\n';
-        return ;
+        return;
     }
-    catch(GradeTooLowException& e)
+    catch (GradeTooLowException &e)
     {
         std::cerr << e.what() << std::endl;
-        return ;
+        return;
     }
 
-    this->_grade = grade;    
-    return ;
+    this->_grade = grade;
+    return;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src): _name(src._name), _grade(src._grade)
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name), _grade(src._grade)
 {
     std::cout << "Bureaucrat copy constructor called" << std::endl;
-    return ;
+    return;
 }
 
 Bureaucrat::~Bureaucrat(void)
 {
     std::cout << "Bureaucrat destructor called" << std::endl;
-    return ;
+    return;
 }
 
-Bureaucrat  &Bureaucrat::operator=(Bureaucrat const &rhs)
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &rhs)
 {
     if (this == &rhs)
     {
@@ -74,7 +68,7 @@ int const &Bureaucrat::getGrade(void) const
     return (this->_grade);
 }
 
-void    Bureaucrat::increaseGrade(void)
+void Bureaucrat::increaseGrade(void)
 {
     try
     {
@@ -84,13 +78,13 @@ void    Bureaucrat::increaseGrade(void)
             throw GradeTooHighException();
         }
     }
-    catch (GradeTooHighException& e)
+    catch (GradeTooHighException &e)
     {
         std::cerr << e.what() << std::endl;
     }
 }
 
-void    Bureaucrat::decreaseGrade(void)
+void Bureaucrat::decreaseGrade(void)
 {
     try
     {
@@ -100,22 +94,35 @@ void    Bureaucrat::decreaseGrade(void)
             throw GradeTooLowException();
         }
     }
-    catch (GradeTooLowException& e)
+    catch (GradeTooLowException &e)
     {
         std::cerr << e.what() << std::endl;
     }
 }
 
-void    Bureaucrat::signForm(Form const &form)
+void Bureaucrat::signForm(Form const &form)
 {
-    if (form.getGradeToSign() >= this->_grade )
+    try
     {
+        if (form.getIsSigned() == false && form.getGradeToSign() < this->_grade)
+        {
+            throw GradeTooLowException();
+        }
+        else if (form.getIsSigned() == false && form.getGradeToSign() >= this->_grade)
+        {
+            throw std::invalid_argument("form was not signed.");
+        }
         std::cout << this->_name << " signed " << form.getName() << std::endl;
     }
-    else
+    catch (GradeTooLowException &e)
     {
         std::cout << this->_name << " couldn't sign " << form.getName();
-        std::cout << " because " << "." << std::endl;
+        std::cout << " form because grade was too low." << std::endl; 
+    }
+    catch (std::invalid_argument &e)
+    {
+        std::cout << this->_name << " couldn't sign " << form.getName();
+        std::cout << " form because " << e.what() <<std::endl;         
     }
 }
 
@@ -123,7 +130,7 @@ void    Bureaucrat::signForm(Form const &form)
 /* Operators */
 /*************/
 
-std::ostream    & operator<<(std::ostream &o, Bureaucrat const &i )
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &i)
 {
     if (i.getName().empty() == true)
     {

@@ -11,7 +11,6 @@ class Bureaucrat
 {
     public:
 
-    Bureaucrat(void);
     Bureaucrat(std::string name, int grade);
     Bureaucrat(Bureaucrat const &src);
     ~Bureaucrat(void);

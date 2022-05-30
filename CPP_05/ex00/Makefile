@@ -1,4 +1,4 @@
-NAME = Recap
+NAME = Bureaucrat
 
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
