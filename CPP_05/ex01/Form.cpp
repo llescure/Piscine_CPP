@@ -93,14 +93,14 @@ std::ostream    & operator<<(std::ostream &o, Form const &i )
     {
         o << "Form " << i.getName() << " is signed. It needs at least a ";
         o << i.getGradeToSign() << " to be signed. It needs at least a ";
-        o << i.getGradeToExecute() << " to be executed." << std::endl;
+        o << i.getGradeToExecute() << " to be executed.";
         return (o);
     }
     else
     {
         o << "Form " << i.getName() << " is not signed. It needs at least a ";
         o << i.getGradeToSign() << " to be signed. It needs at least a ";
-        o << i.getGradeToExecute() << " to be executed." << std::endl;
+        o << i.getGradeToExecute() << " to be executed.";
         return (o);
     }
 }
