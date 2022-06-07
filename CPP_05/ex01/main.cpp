@@ -17,6 +17,7 @@ int main(void)
     std::cout << hollande << std::endl;
     std::cout << fisca << std::endl;
 
+    std::cout << std::endl;
     std::cout << "Test beSigned and signForm false:" << std::endl;
     fisca.beSigned(hollande);
     hollande.signForm(fisca);

@@ -110,6 +110,11 @@ std::ostream    & operator<<(std::ostream &o, Bureaucrat const &i )
         o << "The bureaucrat doesn't exist";
         return (o);
     }
+    if (i.getGrade() < 1 || i.getGrade() > 150)
+    {
+        o << "Can't display bureaucrat. His grade is too low or too high" << std::endl;
+        return (o);
+    }
     o << i.getName() << ", bureaucrat grade " << i.getGrade() << ".";
     return (o);
 }
