@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <stdlib.h>
 
 template< typename T >
 class Array
@@ -31,7 +32,14 @@ class Array
     
     ~Array<T>(void) 
     {
-        delete [] this->_array;
+        if (this->_size > 0)
+        {
+            delete [] this->_array;
+        }
+        else
+        {
+            delete this->_array;
+        }
     }
 
 
