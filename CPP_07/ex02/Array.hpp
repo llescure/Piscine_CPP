@@ -13,11 +13,13 @@ class Array
     Array<T>(void): _size(0)
     {
         this->_array = new T;
+        this->_array[0] = 0;
     }
 
     Array<T>(unsigned int n): _size(n)
     {
         this->_array = new T[n];
+        this->_array[0] = 0;
     }
 
     Array<T>(Array const &src)
