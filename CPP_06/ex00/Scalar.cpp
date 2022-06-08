@@ -84,7 +84,7 @@ double   Scalar::convertStringToType(void)
     }
     else if (this->_type == "double")
     {
-        temp >> this->_doubleConversion;
+        this->_doubleConversion = strtod(this->_originalString.c_str(), &pEnd);
         return (this->_doubleConversion);
     }
     else if (this->_type == "int")
@@ -131,7 +131,7 @@ void    Scalar::convertToInt(double const number)
 
 void    Scalar::convertToFloat(double const number)
 {
-    int remaining;
+    double remaining;
 
     remaining = number - static_cast<int>(number);
     if (this->_type == "int" || this->_type == "char" || remaining == 0)
@@ -146,7 +146,7 @@ void    Scalar::convertToFloat(double const number)
 
 void    Scalar::convertToDouble(double const number)
 {
-    int remaining;
+    double remaining;
 
     remaining = number - static_cast<int>(number);
     if (this->_type == "int" || this->_type == "char" || remaining == 0)
@@ -155,7 +155,7 @@ void    Scalar::convertToDouble(double const number)
     }
     else
     {
-        std::cout << "double: " << static_cast<double>(number) << std::endl;
+        std::cout << "double: " << number << std::endl;
     }
 }
 
