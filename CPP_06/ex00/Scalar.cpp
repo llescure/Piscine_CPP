@@ -46,7 +46,8 @@ int    Scalar::getTypeFromString(void)
     {
         this->_type = "float";
     }
-    else if (this->_originalString.find('.') != std::string::npos || this->_originalString == "-inf"
+    else if ((this->_originalString.find('.') != std::string::npos && this->_originalString.length() > 1)
+        || this->_originalString == "-inf"
         || this->_originalString == "+inf" || this->_originalString == "nan")
     {
         this->_type = "double";
