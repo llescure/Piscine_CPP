@@ -90,6 +90,26 @@ class Array
         return (this->_array[0]);
     }
 
+    T   &operator[](unsigned int const &i) const
+    {
+        try
+        {
+            if (i >= this->_size)
+            {
+                throw OutOfBonds();
+            }
+            else
+            {
+                return (this->_array[i]);
+            }
+        }
+        catch(const Array::OutOfBonds& e)
+        {
+            std::cerr << e.what() << std::endl;
+        }
+        return (this->_array[0]);
+    }
+
 /*********************/
 /* Exception classes */
 /*********************/
