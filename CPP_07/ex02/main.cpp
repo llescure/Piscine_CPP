@@ -15,7 +15,7 @@ int main(void)
 
     std::cout << std::endl;
     std::cout << "Trying to access out of bonds area:" << std::endl;
-    std::cout << "full[20] = " << full[20] << std::endl;
+    std::cout << "full[20] = " << full[20];
     
     std::cout << std::endl;
     std::cout << "Copy constructor case:" << std::endl;

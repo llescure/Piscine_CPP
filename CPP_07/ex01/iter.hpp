@@ -4,18 +4,18 @@
 #include <iostream>
 
 template <typename T>
-void    iter(T *array, int const &size, void (*function)(const T &))
+void    iter(T *array, size_t const &size, void (*function)(T &))
 {
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
         function(array[i]);
     }
 }
 
 template <typename T>
-void    iter(T *array, int const &size, void (*function)(T &))
+void    iter(T *array, size_t const &size, void (*function)(T const &))
 {
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
         function(array[i]);
     }

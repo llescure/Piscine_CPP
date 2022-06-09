@@ -85,7 +85,7 @@ class Array
         }
         catch(const Array::OutOfBonds& e)
         {
-            std::cerr << e.what();
+            std::cerr << e.what() << std::endl;
         }
         return (this->_array[0]);
     }
