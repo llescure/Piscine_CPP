@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <iterator>
 
 class Span
 {
@@ -15,10 +16,10 @@ class Span
     Span    &operator=(Span const &rhs);
 
     void    addNumber(int const &number);
-    void    addSeveralNumber();
+    void    addSeveralNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
     int     shortestSpan(void) const;
     int     longestSpan(void) const;
-    // void    printArray(void) const;
+    void    printArray(void) const;
 
     class SpanMaxMinImpossible: public std::exception
     {

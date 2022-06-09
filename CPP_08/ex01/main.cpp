@@ -1,4 +1,6 @@
 #include "Span.hpp"
+#include <cstdlib>
+#include <ctime>
 
 int main()
 {
@@ -16,7 +18,6 @@ int main()
     std::cout << "Add number failure:" << std::endl;
     sp.addNumber(23);
 
-    // sp.printArray();
     std::cout << std::endl;
     std::cout << "Shortest span is : ";
     std::cout << sp.shortestSpan() << std::endl;
@@ -43,7 +44,26 @@ int main()
 
     /* Example with 10 000 numbers */
     std::cout << "// Example with 10 000 numbers: //" << std::endl;
-    std::vector<int> vct(10000);   
-    sp.addSeveralNumber();
+
+    /* Random initialization */
+    std::srand(std::time(NULL));
+
+    std::vector<int> vct(100);
+
+    for (unsigned int i = 0; i < sizeof(vct); i++)
+    {
+        vct[i] = std::rand() % 100 + 1;
+    }
+
+    Span tenThousand = Span(100);
+    tenThousand.addSeveralNumber(vct.begin(), vct.end());
+    tenThousand.printArray();
+    std::cout << std::endl;
+    std::cout << "Shortest span is : ";
+    std::cout << tenThousand.shortestSpan() << std::endl;
+    std::cout << "Longest span is : ";
+    std::cout << tenThousand.longestSpan() << std::endl;
+    std::cout << std::endl;
+
     return 0;
 }

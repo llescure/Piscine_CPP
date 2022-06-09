@@ -37,15 +37,15 @@ Span &Span::operator=(Span const &rhs)
 /* Member functions */
 /********************/
 
-void    Span::addNumber(int const &number)
+void Span::addNumber(int const &number)
 {
     try
     {
-        if (this->_numberOfElementStored == this->_size)
+        this->_numberOfElementStored += 1;
+        if (this->_numberOfElementStored > this->_size)
         {
             throw SpanFull();
         }
-        this->_numberOfElementStored += 1;
         this->_array[this->_numberOfElementStored - 1] = number;
     }
     catch (const Span::SpanFull &e)
@@ -54,12 +54,25 @@ void    Span::addNumber(int const &number)
     }
 }
 
-void    Span::addSeveralNumber()
+void Span::addSeveralNumber(std::vector<int>::iterator start, std::vector<int>::iterator end)
 {
-    return ;
+    this->_numberOfElementStored = std::distance(start, end);
+    try
+    {
+        if (this->_numberOfElementStored > this->_size)
+        {
+            throw SpanFull();
+        }
+        std::vector<int>::iterator i = this->_array.begin();
+        copy(start, end, i);
+    }
+    catch (const Span::SpanFull &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 
-int     Span::longestSpan(void) const
+int Span::longestSpan(void) const
 {
     try
     {
@@ -78,7 +91,7 @@ int     Span::longestSpan(void) const
     return (0);
 }
 
-int     Span::shortestSpan(void) const
+int Span::shortestSpan(void) const
 {
     int min;
 
@@ -102,8 +115,7 @@ int     Span::shortestSpan(void) const
             {
                 for (unsigned int i = 0; i < j; i++)
                 {
-                    if (min > this->_array[j] - this->_array[i]
-                        && this->_array[j] - this->_array[i] > 0)
+                    if (min > this->_array[j] - this->_array[i] && this->_array[j] - this->_array[i] > 0)
                     {
                         min = this->_array[j] - this->_array[i];
                     }
@@ -113,8 +125,7 @@ int     Span::shortestSpan(void) const
             {
                 for (unsigned int i = j + 1; i < this->_numberOfElementStored; i++)
                 {
-                    if (min > this->_array[j] - this->_array[i]
-                        && this->_array[j] - this->_array[i] > 0)
+                    if (min > this->_array[j] - this->_array[i] && this->_array[j] - this->_array[i] > 0)
                     {
                         min = this->_array[j] - this->_array[i];
                     }
@@ -130,13 +141,13 @@ int     Span::shortestSpan(void) const
     return (0);
 }
 
-// void    Span::printArray(void) const
-// {
-//     for (unsigned int i = 0; i < this->_numberOfElementStored; i++)
-//     {
-//         std::cout << this->_array[i] << std::endl;
-//     }
-// }
+void Span::printArray(void) const
+{
+    for (unsigned int i = 0; i < this->_numberOfElementStored; i++)
+    {
+        std::cout << this->_array[i] << std::endl;
+    }
+}
 
 /*************/
 /* Exception */
