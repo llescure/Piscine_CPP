@@ -3,18 +3,27 @@
 
 #include <iostream>
 
-template <typename T, typename U, typename F>
-void    iter(T &array, U const &size, F const function)
+template <typename T>
+void    iter(T *array, int const &size, void (*function)(const T &))
 {
     for (int i = 0; i < size; i++)
     {
-        array[i] = function(array[i]);
+        function(array[i]);
+    }
+}
+
+template <typename T>
+void    iter(T *array, int const &size, void (*function)(T &))
+{
+    for (int i = 0; i < size; i++)
+    {
+        function(array[i]);
     }
 }
 
 #endif
 
-int    addOne(int x)
+void    addOne(int &x)
 {
-    return (x+= 1);
+    x+= 1;
 }
