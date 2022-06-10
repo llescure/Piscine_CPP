@@ -6,13 +6,13 @@
 
 Span::Span(unsigned int N) : _numberOfElementStored(0)
 {
-    long    checkNegative = N;
-
+    int    checkNegative = N;
     try
     {
         if (checkNegative < 0)
         {
             throw NegativeSize();
+            return ;
         }
         this->_size = N;
         std::vector<int> temp(N);

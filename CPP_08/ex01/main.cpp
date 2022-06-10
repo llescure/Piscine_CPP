@@ -43,7 +43,7 @@ int main()
     std::cout << std::endl;
 
     /* Example with impossible constructo*/
-    std::cout << "// Example with impossible number to add: //" << std::endl;
+    std::cout << "// Example with impossible constructor: //" << std::endl;
     Span OutofBondNumber = Span(-42);
     OutofBondNumber.addNumber(1154);
     OutofBondNumber.printArray();
