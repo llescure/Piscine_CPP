@@ -35,6 +35,12 @@ class Span
         virtual const char * what() const throw();
     };
 
+    class NegativeSize: public std::exception
+    {
+        public:
+
+        virtual const char * what() const throw();
+    };
 
     private:
 

@@ -4,10 +4,24 @@
 /* Canonical Form */
 /******************/
 
-Span::Span(unsigned N) : _size(N), _numberOfElementStored(0)
+Span::Span(unsigned int N) : _numberOfElementStored(0)
 {
-    std::vector<int> temp(N);
-    this->_array = temp;
+    long    checkNegative = N;
+
+    try
+    {
+        if (checkNegative < 0)
+        {
+            throw NegativeSize();
+        }
+        this->_size = N;
+        std::vector<int> temp(N);
+        this->_array = temp;
+    }
+    catch(const Span::NegativeSize& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     return;
 }
 
@@ -44,6 +58,7 @@ void Span::addNumber(int const &number)
         this->_numberOfElementStored += 1;
         if (this->_numberOfElementStored > this->_size)
         {
+            this->_numberOfElementStored -= 1;
             throw SpanFull();
         }
         this->_array[this->_numberOfElementStored - 1] = number;
@@ -111,24 +126,11 @@ int Span::shortestSpan(void) const
         }
         for (unsigned int j = 0; j < this->_numberOfElementStored; j++)
         {
-            if (j == this->_numberOfElementStored - 1)
+            for (unsigned int i = 0; i < this->_numberOfElementStored - 1; i++)
             {
-                for (unsigned int i = 0; i < j; i++)
+                if (min > this->_array[j] - this->_array[i] && this->_array[j] - this->_array[i] >= 0 && i != j)
                 {
-                    if (min > this->_array[j] - this->_array[i] && this->_array[j] - this->_array[i] > 0)
-                    {
-                        min = this->_array[j] - this->_array[i];
-                    }
-                }
-            }
-            else
-            {
-                for (unsigned int i = j + 1; i < this->_numberOfElementStored; i++)
-                {
-                    if (min > this->_array[j] - this->_array[i] && this->_array[j] - this->_array[i] > 0)
-                    {
-                        min = this->_array[j] - this->_array[i];
-                    }
+                    min = this->_array[j] - this->_array[i];
                 }
             }
         }
@@ -161,4 +163,9 @@ const char *Span::SpanMaxMinImpossible::what() const throw()
 const char *Span::SpanFull::what() const throw()
 {
     return ("No new element can be added. The span is already full");
+}
+
+const char *Span::NegativeSize::what() const throw()
+{
+    return ("The element can't be created because the size given is negative");
 }

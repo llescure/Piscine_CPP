@@ -42,22 +42,27 @@ int main()
     }
     std::cout << std::endl;
 
+    /* Example with impossible constructo*/
+    std::cout << "// Example with impossible number to add: //" << std::endl;
+    Span OutofBondNumber = Span(-42);
+    OutofBondNumber.addNumber(1154);
+    OutofBondNumber.printArray();
+    std::cout << std::endl;
     /* Example with 10 000 numbers */
     std::cout << "// Example with 10 000 numbers: //" << std::endl;
 
     /* Random initialization */
     std::srand(std::time(NULL));
 
-    std::vector<int> vct(100);
+    std::vector<int> vct(10000);
 
-    for (unsigned int i = 0; i < sizeof(vct); i++)
+    for (unsigned int i = 0; i < std::distance(vct.begin(), vct.end()); i++)
     {
-        vct[i] = std::rand() % 100 + 1;
+        vct[i] = std::rand() % 10000 + 1;
     }
 
-    Span tenThousand = Span(100);
+    Span tenThousand = Span(10000);
     tenThousand.addSeveralNumber(vct.begin(), vct.end());
-    tenThousand.printArray();
     std::cout << std::endl;
     std::cout << "Shortest span is : ";
     std::cout << tenThousand.shortestSpan() << std::endl;
