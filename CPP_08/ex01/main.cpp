@@ -44,10 +44,9 @@ int main()
 
     /* Example with impossible constructo*/
     std::cout << "// Example with impossible constructor: //" << std::endl;
-    Span OutofBondNumber = Span(-42);
-    OutofBondNumber.addNumber(1154);
-    OutofBondNumber.printArray();
+    Span Impossible = Span(-42);
     std::cout << std::endl;
+
     /* Example with 10 000 numbers */
     std::cout << "// Example with 10 000 numbers: //" << std::endl;
 
